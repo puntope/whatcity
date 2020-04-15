@@ -4,6 +4,7 @@ module.exports = withSass({
     cssModules: true,
     env: {
         apiActive: true,
+        repository: 'https://github.com/puntope/whatcity',
         cities: [
             {
                 name: 'Madrid',

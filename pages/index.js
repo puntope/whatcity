@@ -56,7 +56,7 @@ const Index = () => {
              component="main"
              style={getSkyBackground(sky)}
         >
-            <Link className={s.link} href="https://github.com/puntope/whatcity">
+            <Link className={s.link} href={process.env.repository}>
                 <GitHub/>
                 GitHub
             </Link>
