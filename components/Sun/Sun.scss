@@ -1,0 +1,17 @@
+.sun {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background: yellow;
+  transform: translate(70vw, 30vh);
+  transition: transform 3s;
+}
+
+.sunrise {
+  transform: translate(-30vw, -20vh);
+}
+
+.sunset {
+  transform: translate(-70vw, 30vh);
+}

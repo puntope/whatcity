@@ -1,0 +1,90 @@
+
+
+.clouds {
+  display: none;
+
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  overflow-x: hidden;
+  height: 40vh;
+  align-items: flex-end;
+  z-index: 1;
+
+  .cloudWrap:nth-child(n+1) {
+    animation-delay: 0s;
+
+  }
+  .cloudWrap:nth-child(n+2) {
+    animation-delay: 1s;
+  }
+  .cloudWrap:nth-child(n+3) {
+    animation-delay: 2s;
+  }
+
+  @media (min-width: 1024px) {
+    display: flex;
+  }
+
+}
+
+.cloudWrap {
+  position: relative;
+  height: 10vh;
+  width: 15vw;
+
+  transform: translateX(-50px);
+  animation-name: cloudsAnimation;
+  animation-fill-mode: initial;
+  animation-direction: alternate-reverse;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.cloud {
+  background: rgb(255,255,255);
+  position: absolute;
+  display: block;
+}
+
+.baseCloud {
+  bottom: 0;
+  width: 300px;
+  height: 100px;
+  border-radius: 50px;
+  position: absolute;
+
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, var(--current-weather) 100%);
+
+}
+
+.bigCloud {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  bottom: 15px;
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, var(--current-weather) 100%);
+  left: 50px;
+}
+
+.smallCloud {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  bottom: 35px;
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, var(--current-weather) 100%);
+  left: 169px;
+}
+
+
+@keyframes cloudsAnimation {
+    0% {
+      transform: translateX(-100px);
+    }
+
+    100% {
+      transform: translateX(20px);
+    }
+}
