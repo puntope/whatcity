@@ -21,3 +21,14 @@ html {
   overflow: hidden;
 }
 
+.link {
+  padding: 1em;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  svg {
+    margin-right: .5em;
+  }
+}

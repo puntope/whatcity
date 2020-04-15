@@ -11,6 +11,7 @@ const Rain = ({isRaining}) => {
                 let randDelay = Math.floor(Math.random() * 9);
                 return (
                     <div
+                        key={index}
                         style={{
                             animationDelay: (randDelay*0.1) + 's',
                             left: (randPosition*10) + '%'

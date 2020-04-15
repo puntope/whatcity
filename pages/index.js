@@ -9,6 +9,8 @@ import s from '../scss/styles.scss';
 import Sun from "../components/Sun/Sun";
 import Rain from "../components/Rain/Rain";
 import Averages from "../components/Averages/Averages";
+import {GitHub} from "@material-ui/icons";
+import Link from "@material-ui/core/Link";
 
 
 const Index = () => {
@@ -54,6 +56,10 @@ const Index = () => {
              component="main"
              style={getSkyBackground(sky)}
         >
+            <Link className={s.link} href="https://github.com/puntope/whatcity">
+                <GitHub/>
+                GitHub
+            </Link>
             <Box
                 className={s.root}
                 component="div"
@@ -61,6 +67,8 @@ const Index = () => {
 
                 <Rain isRaining={weather.rain} />
                 <Sun rising={weather.sunny} />
+
+
 
                 <Hero
                     title="Hello Jamie"
