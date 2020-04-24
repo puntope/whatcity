@@ -1,0 +1,35 @@
+{
+  "root": true,
+  "parser": "babel-eslint",
+  "plugins": ["react", "react-hooks", "prettier"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    // NextJs does not require you to import React into each component.
+    "react/react-in-jsx-scope": "off"
+  },
+  "globals": {
+    // NextJs does not require you to import React into each component.
+    "React": "writable"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
