@@ -139,12 +139,15 @@ const fetchCities = async (cities, setCities) => {
       });
 
       let dataWeather = await doApiRequest(apiWeather);
+      if (!dataWeather["cod"] || dataWeather.cod !== "200") {
+        throw "Weather Api error";
+      }
       city.weather = {
         temperature: Math.round(dataWeather.main.temp),
         status: dataWeather.weather[0].main,
       };
     } catch (e) {
-      console.error("Weather Api error");
+      console.error(e);
       let avgWeather = Math.round(city.weatherAvg[new Date().getMonth()]);
       city.weather = {
         temperature: avgWeather,
