@@ -3,7 +3,6 @@ import React, {useEffect, useState} from "react";
 import Box from "@material-ui/core/Box";
 import Hero from "../components/Hero";
 import Cities from "../components/Cities";
-import dayjs from "dayjs";
 import Clouds from "../components/Clouds/Clouds";
 import s from '../scss/styles.scss';
 import Sun from "../components/Sun/Sun";
@@ -43,7 +42,7 @@ const Index = () => {
     useEffect(() => {
 
         async function fetchData() {
-            await fetchCities(cities, setCities);
+            await fetchCities(process.env.cities, setCities);
         }
 
         fetchData();
@@ -54,8 +53,9 @@ const Index = () => {
 
         <Box
              component="main"
-             style={getSkyBackground(sky)}
         >
+            <Box style={getSkyBackground(sky)} className={s.sky} />
+
             <Link className={s.link} href={process.env.repository}>
                 <GitHub/>
                 GitHub
@@ -142,32 +142,6 @@ const fetchCities = async (cities, setCities) => {
 
         cities[key] = city;
         setCities(cities);
-
-        /*
-
-        DISABLED NO FLIGHTS IN COVID
-
-        const flights = process.env.flights;
-        const today = dayjs().format('DD/MM/YYYY');
-
-
-        let apiFlights = getEndpoint(flights, {
-            fly_from: `city:${city.code}`,
-            v: 3,
-            date_from: today,
-            date_to: today,
-            partner: 'picky',
-        });
-
-        let {data} = await doApiRequest(apiFlights);
-
-
-        if (data.length) {
-            city.flights = {
-                price: data[0].price
-            }
-        }*/
-
 
     }
 
