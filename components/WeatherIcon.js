@@ -4,7 +4,7 @@ import {
   mdiWeatherPouring,
   mdiWeatherSunny,
 } from "@mdi/js";
-import React from "react";
+import PropTypes from "prop-types";
 
 const WeatherIcon = ({ status }) => {
   const iconsMap = {
@@ -13,7 +13,11 @@ const WeatherIcon = ({ status }) => {
     rain: <Icon size={0.8} path={mdiWeatherPouring} title="Rain" />,
   };
 
-  return <React.Fragment>{iconsMap[status]}</React.Fragment>;
+  return <>{iconsMap[status]}</>;
 };
 
 export default WeatherIcon;
+
+WeatherIcon.propTypes = {
+  status: PropTypes.string,
+};

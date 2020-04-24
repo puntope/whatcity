@@ -1,8 +1,13 @@
 import s from "./Sun.scss";
-import * as classnames from "classnames";
+import classNames from "classnames";
+import PropTypes from "prop-types";
 
 const Sun = ({ rising }) => (
-  <div className={classnames(s.sun, rising ? s.sunrise : s.sunset)}></div>
+  <div className={classNames(s.sun, rising ? s.sunrise : s.sunset)}>&nbsp;</div>
 );
 
 export default Sun;
+
+Sun.propTypes = {
+  rising: PropTypes.bool,
+};

@@ -10,6 +10,7 @@ import Table from "@material-ui/core/Table";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableBody from "@material-ui/core/TableBody";
 import TableHead from "@material-ui/core/TableHead";
+import PropTypes from "prop-types";
 
 const months = [
   "Jan",
@@ -68,3 +69,7 @@ const Averages = ({ cities }) => {
 };
 
 export default Averages;
+
+Averages.propTypes = {
+  cities: PropTypes.array,
+};

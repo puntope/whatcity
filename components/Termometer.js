@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { Box } from "@material-ui/core";
-import { spacing } from "@material-ui/system";
+import PropTypes from "prop-types";
 
 const Termometer = ({ temperature, variant = "h5" }) => {
   return (
@@ -21,3 +21,8 @@ const Termometer = ({ temperature, variant = "h5" }) => {
 };
 
 export default Termometer;
+
+Termometer.propTypes = {
+  temperature: PropTypes.number,
+  variant: PropTypes.string,
+};

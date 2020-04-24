@@ -2,6 +2,7 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import React from "react";
 import Box from "@material-ui/core/Box";
+import PropTypes from "prop-types";
 
 const Hero = ({ title, body }) => (
   <Container maxWidth="sm" component="section">
@@ -28,3 +29,8 @@ const Hero = ({ title, body }) => (
 );
 
 export default Hero;
+
+Hero.propTypes = {
+  title: PropTypes.string,
+  body: PropTypes.string,
+};

@@ -2,6 +2,7 @@ import { mdiAirplane } from "@mdi/js";
 import Icon from "@mdi/react";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import PropTypes from "prop-types";
 
 const FlightInfo = ({ flight }) => {
   return (
@@ -15,3 +16,7 @@ const FlightInfo = ({ flight }) => {
 };
 
 export default FlightInfo;
+
+FlightInfo.propTypes = {
+  flight: PropTypes.object,
+};

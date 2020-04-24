@@ -1,5 +1,5 @@
 import s from "./Rain.scss";
-import * as classnames from "classnames";
+import PropTypes from "prop-types";
 
 const Rain = ({ isRaining }) => {
   return (
@@ -16,7 +16,9 @@ const Rain = ({ isRaining }) => {
                 left: randPosition * 10 + "%",
               }}
               className={s.drop}
-            ></div>
+            >
+              &nbsp;
+            </div>
           );
         })}
     </div>
@@ -24,3 +26,7 @@ const Rain = ({ isRaining }) => {
 };
 
 export default Rain;
+
+Rain.propTypes = {
+  isRaining: PropTypes.bool,
+};

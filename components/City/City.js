@@ -12,12 +12,13 @@ import FlightInfo from "../FlightInfo";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 import s from "./City.scss";
-import classnames from "classnames";
+import classNames from "classnames";
+import PropTypes from "prop-types";
 
 const City = ({ city, onChangeStatus, isActive }) => {
   return (
     <div
-      className={classnames(s.card, isActive ? s.cardActive : s.cardInactive)}
+      className={classNames(s.card, isActive ? s.cardActive : s.cardInactive)}
     >
       <Card onClick={() => onChangeStatus(city)}>
         <CardMedia
@@ -58,3 +59,9 @@ const City = ({ city, onChangeStatus, isActive }) => {
 };
 
 export default City;
+
+City.propTypes = {
+  city: PropTypes.object,
+  onChangeStatus: PropTypes.func,
+  isActive: PropTypes.bool,
+};
