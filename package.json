@@ -19,7 +19,7 @@
     "@mdi/react": "^1.4.0",
     "@zeit/next-sass": "^1.0.1",
     "classnames": "^2.2.6",
-    "next": "^9.3.4",
+    "next": "^11.1.0",
     "node-fetch": "^2.6.0",
     "node-sass": "^4.13.1",
     "normalize.css": "^8.0.1",
